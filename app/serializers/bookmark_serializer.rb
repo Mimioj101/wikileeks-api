@@ -1,3 +1,3 @@
 class BookmarkSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :user_id, :wiki_id
 end
