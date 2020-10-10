@@ -6,7 +6,7 @@ class Api::V1::WikisController < ApplicationController
     end
 
     def show
-        wiki = wiki.find(params[:id])
+        wiki = Wiki.find(params[:id])
         render json: wiki
     end
     
@@ -20,7 +20,7 @@ class Api::V1::WikisController < ApplicationController
     end
 
     def destroy
-        wiki = wiki.find(params[:id])
+        wiki = Wiki.find(params[:id])
         wiki.delete
     end
 

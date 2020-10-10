@@ -1,16 +1,16 @@
 class Api::V1::BookmarksController < ApplicationController
     def index
-        bookmarks = bookmark.all 
+        bookmarks = Bookmark.all 
         render json: bookmarks
     end
 
     def show
-        bookmark = bookmark.find(params[:id])
+        bookmark = Bookmark.find(params[:id])
         render json: bookmark
     end
 
     def destroy
-        bookmark = bookmark.find(params[:id])
+        bookmark = Bookmark.find(params[:id])
         bookmark.delete
     end
 

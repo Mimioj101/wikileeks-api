@@ -1,26 +1,26 @@
 class Api::V1::FoldersController < ApplicationController
     def index
-        folder = folder.all 
+        folder = Folder.all 
         render json: folder
     end
 
     def show
-        folder = folder.find(params[:id])
+        folder = Folder.find(params[:id])
         render json: folder
     end
 
     def destroy
-        folder = folder.find(params[:id])
+        folder = Folder.find(params[:id])
         folder.delete
     end
 
     def update
-        folder = folder.find(params[:id])
+        folder = Folder.find(params[:id])
         folder.update(folder_params)
     end
     
     def create
-        folder = folder.create(folder_params)
+        folder = Folder.create(folder_params)
         if folder.valid?
             render json: {folder: FolderSerializer.new(folder) }, status: :created
         else
