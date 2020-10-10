@@ -16,7 +16,7 @@ class Api::V1::BookmarksController < ApplicationController
 
 
     def create
-        bookmark = bookmark.create(bookmark_params)
+        bookmark = Bookmark.create(bookmark_params)
         if bookmark.valid?
             render json: { bookmark: BookmarkSerializer.new(bookmark) }, status: :created
         else
