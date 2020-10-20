@@ -14,6 +14,12 @@ class Api::V1::BookmarksController < ApplicationController
         bookmark.delete
     end
 
+    def update
+        bookmark = Bookmark.find(params[:id])
+        bookmark.update(bookmark_params)
+        render json: bookmark
+    end
+
 
     def create
         bookmark = Bookmark.create(bookmark_params)

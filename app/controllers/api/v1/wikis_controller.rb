@@ -1,3 +1,5 @@
+require 'rest-client'
+
 class Api::V1::WikisController < ApplicationController
 
     def index
@@ -8,6 +10,13 @@ class Api::V1::WikisController < ApplicationController
     def show
         wiki = Wiki.find(params[:id])
         render json: wiki
+    end
+
+    def wikiarticles
+        url = "https://en.wikipedia.org/w/api.php?action=query&list=search&srlimit=30&srsearch=#{params[:search]}&utf8=&format=json"
+        response = RestClient.get(url)
+        data = JSON.parse(response.body)
+        render json: data
     end
     
     def create
