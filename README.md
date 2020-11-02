@@ -7,10 +7,10 @@ WikiLeeks is a Wikipedia search and save web app utilizing a Rails backend and a
 ## Tech Stack
 This web app makes use of the following:
 
-Ruby [2.6.1]
-Rails [~> 6.0.3.3] - MVC Web Framework
-PostgreSQL [~> 2.0] - Database
-BCrypt [~> 3.1.7] - Gem for encryption
+- Ruby [2.6.1]
+- Rails [~> 6.0.3.3] - MVC Web Framework
+- PostgreSQL [~> 2.0] - Database
+- BCrypt [~> 3.1.7] - Gem for encryption
 
 ## Installing WikiLeeks
 - Clone this repo to your local machine git clone <this-repo-url>
